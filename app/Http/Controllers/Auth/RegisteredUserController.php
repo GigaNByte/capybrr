@@ -39,9 +39,15 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $role = "user";
+        if ( $request->email == env("CAPIBRR_ADMIN_EMAIL", "")){
+            $role = "admin";
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'role' => $role,
             'password' => Hash::make($request->password),
         ]);
 
