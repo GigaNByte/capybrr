@@ -1,6 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/admin.js": "/js/admin.js",
+    "/js/user.js": "/js/user.js",
+    "/css/user.css": "/css/user.css",
     "/css/admin.css": "/css/admin.css",
     "/css/app.css": "/css/app.css",
     "/fonts/Montserrat-Bold.ttf": "/fonts/Montserrat-Bold.ttf",

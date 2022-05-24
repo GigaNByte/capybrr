@@ -26,13 +26,12 @@ class UserInfo extends Model
         return $this->belongsTo('App\User');
     }
 
-
-
     public function getPicture()
     {
         if ($this->profile_image == null) {
-            return Storage::url('/images/default_profile_picture.png');
+            return Storage::url('app/images/default.png');
         }
         return Storage::url($this->profile_image);
     }
+
 }

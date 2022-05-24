@@ -22,4 +22,9 @@ mix.js('resources/js/admin.js', 'public/js').postCss('resources/css/admin.css', 
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
+mix.js('resources/js/user.js', 'public/js').postCss('resources/css/user.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]);
 mix.copyDirectory('resources/fonts', 'public/fonts');

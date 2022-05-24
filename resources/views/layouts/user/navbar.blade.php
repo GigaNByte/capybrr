@@ -12,7 +12,7 @@
     <div class="navbar-menu" id="navbar-menu">
         <div class="navbar-end">
             <div class="navbar-item dropdown has-divider has-user-avatar">
-                <a class="navbar-link">
+                <a class="navbar-link" href="{{route("user.dashboard")}}">
                     <div class="user-avatar">
                         <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe"
                              class="rounded-full">
@@ -21,11 +21,7 @@
                     <div class="is-user-name"><span>{{$user->name}}</span></div>
                 </a>
             </div>
-            <a href="#"
-               class="navbar-item has-divider desktop-icon-only">
-                <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
-                <span>{{ __('About') }}</span>
-            </a>
+            <a href="{{route("user.app")}}"  class="navbar-item"> <span class="icon"><x-icon-capybara/></span></a>
             <a href="{{ config('app.github', 'https://github.com/GigaNByte/capybrr') }}" class="navbar-item has-divider desktop-icon-only">
                 <span class="icon"><i class="mdi mdi-github-circle"></i></span>
                 <span>{{ __('GitHub') }}</span>

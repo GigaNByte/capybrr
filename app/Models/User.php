@@ -51,7 +51,7 @@ class User extends Authenticatable
     }
     public function interests()
     {
-        return $this->belongsToMany(Interest::class,'interests_users_info','interest_id','user_id');
+        return $this->belongsToMany(Interest::class,'interests_user_infos','interest_id','user_id');
     }
     public function match(User $foreignUser)
     {
@@ -67,6 +67,14 @@ class User extends Authenticatable
             return null;
         }
     }
+    public function userLiked()
+    {
+        return $this->belongsToMany('App\User', 'matches', 'user_two_id', 'user_one_id');
+    }
 
+    public function likedUser()
+    {
+        return $this->belongsToMany('App\User', 'matches', 'user_one_id', 'user_two_id');
+    }
 
 }
