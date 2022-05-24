@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -12,6 +11,7 @@ return [
     | any other location as required by the application or its packages.
     |
     */
+    'github' => env('APP_GITHUB', 'https://github.com/GigaNByte/capybrr'),
 
     'name' => env('APP_NAME', 'Laravel'),
 

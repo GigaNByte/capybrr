@@ -22,9 +22,17 @@ Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController:
 
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'verifyRole:admin'], function() {
-        Route::get('/admin/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('adminDashboard');
+        Route::get('/admin/dashboard', [\App\Http\Controllers\AdminDashboardController::class,'index'])->name('admin.dashboard');
+
+        Route::get('/admin/dashboard/users', function () {
+            return view('admin.dashboard.users');
+        });
+        Route::get('/admin/dashboard/matches', function () {
+            return view('admin.dashboard.matches');
+        });
+        Route::get('/admin/dashboard/about', function () {
+            return view('admin.dashboard.about');
+        });
     });
     Route::group(['middleware' => 'verifyRole:user'], function() {
         Route::get('/dashboard', function () {

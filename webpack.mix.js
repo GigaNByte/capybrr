@@ -16,3 +16,10 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
+//TODO: Protect admin.js route
+mix.js('resources/js/admin.js', 'public/js').postCss('resources/css/admin.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]);
+mix.copyDirectory('resources/fonts', 'public/fonts');

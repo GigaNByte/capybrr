@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Match extends Model
 {
     protected $fillable = [
@@ -14,8 +15,12 @@ class Match extends Model
         'has_user_two_liked',
     ];
 
-    public function user()
+    public function userOne()
     {
-        return $this->belongsTo('App\User', 'user_one_id');
+        return $this->belongsTo(\App\Models\User::class, 'user_one_id');
+    }
+    public function userTwo()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'user_two_id');
     }
 }
