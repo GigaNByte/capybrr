@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\RedirectAuthenticatedUsersController;
 use App\Http\Controllers\UserAppController;
 use App\Http\Controllers\UserDashboardController;
@@ -18,12 +19,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get("/redirectAuthenticatedUsers", [RedirectAuthenticatedUsersController::class,'index']);
-
+Route::get('/', [AuthenticatedSessionController::class, 'create']);
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'verifyRole:admin'], function() {
         Route::get('/admin/dashboard', [AdminDashboardController::class,'index'])->name('admin.dashboard');
@@ -39,11 +38,6 @@ Route::group(['middleware' => 'auth'], function() {
         Route::delete('/user/delete', [UserDashboardController::class,'deleteUser'])->name('user.delete');
         Route::get('/app', [UserAppController::class,'index'])->name('user.app');
         Route::post('/like/{id}', [UserAppController::class,'like'])->name('user.app.like');
-    });
-    Route::group(['middleware' => 'verifyRole:guest'], function() {
-        Route::get('/', function () {
-            return view('auth.login');
-        });
     });
 });
 
