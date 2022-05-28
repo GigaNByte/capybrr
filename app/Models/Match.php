@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'user_one_id',
         'user_two_id',
@@ -17,10 +19,10 @@ class Match extends Model
 
     public function userOne()
     {
-        return $this->belongsTo(\App\Models\User::class, 'user_one_id');
+        return $this->belongsTo(User::class, 'user_one_id');
     }
     public function userTwo()
     {
-        return $this->belongsTo(\App\Models\User::class, 'user_two_id');
+        return $this->belongsTo(User::class, 'user_two_id');
     }
 }

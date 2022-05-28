@@ -14,16 +14,16 @@ class CreateUsersInfoTable extends Migration
     public function up()
     {
         Schema::create('user_infos', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->string('phone');
+            $table->id()->unique();
+            $table->unsignedBigInteger('user_id')->unique();
+            $table->string('phone')->unique();
             $table->string('location');
-            $table->string('gender');
+            $table->enum('gender',['Male', 'Female']);
             $table->unsignedInteger('age');
             $table->string('profile_image');
-            $table->enum('relationship');
-            $table->text('description');
-            $table->string('species');
+            $table->enum('relationship',['Single', 'Complicated', 'Taken', 'Married']);
+            $table->string('description',180);
+            $table->enum('species',['Floppa','Capybara']);
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

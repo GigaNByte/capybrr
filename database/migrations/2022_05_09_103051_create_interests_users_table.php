@@ -13,10 +13,10 @@ class CreateInterestsUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_interests', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('interest_id')->constrained();
+        Schema::create('interests_users', function (Blueprint $table) {
+            $table->id()->unique();
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('interest_id')->references('id')->on('interests')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateInterestsUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_interests');
+        Schema::dropIfExists('interests_users');
     }
 }

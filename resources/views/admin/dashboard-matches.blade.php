@@ -4,7 +4,7 @@
             <header class="card-header">
                 <p class="card-header-title">
                     <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
-                    {{ __('Users') }}
+                    {{ __('Matches') }}
                 </p>
                 <a href="#" class="card-header-icon">
                     <span class="icon"><i class="mdi mdi-reload brr-reload"></i></span>
@@ -15,11 +15,9 @@
                     <thead>
                     <tr>
                         <th></th>
-                        <th> {{ __('Name') }}</th>
-                        <th>{{ __('Gender') }} </th>
-                        <th>{{ __('Age') }} </th>
-                        <th>{{ __('Location') }} </th>
-                        <th>{{ __('Relationship') }} </th>
+                        <th> {{ __('User 1') }}</th>
+                        <th></th>
+                        <th>{{ __('User 2')  }} </th>
                         <th>{{ __('Species') }} </th>
                         <th>{{ __('Created') }} </th>
                     </tr>
@@ -27,22 +25,29 @@
                     <tbody>
                     @foreach ($matches as $match)
 
-                        @if (null != $match->info)
+                        @if (null != $match->userTwo->info && null != $match->userOne->info)
                             <tr>
                                 <td class="image-cell">
                                     <div class="image">
-                                        <img src="{{$match->info->getPicture()}}"
+                                        <img src="{{$match->userOne->info->getProfileImage()}}"
                                              class="rounded-full">
                                     </div>
                                 </td>
-                                <td data-label="Name">{{$match->name}}</td>
-                                <td data-label="Gender">{{$match->info->gender}}</td>
-                                <td data-label="Age">{{$match->info->age}}</td>
-                                <td data-label="location">{{$match->info->location}}</td>
-                                <td data-label="Relationship">{{$match->info->Relationship}}</td>
-                                <td data-label="Species">{{$match->info->Species}}</td>
-                                <td data-label="Created">
-                                    <small class="text-gray-500" title="Oct 25, 2021">{{$match->timestamp}}</small>
+                                <td data-label="Name">{{$match->userOne->name}}</td>
+
+                                <td class="image-cell">
+                                    <div class="image">
+                                        <img src="{{$match->userTwo->info->getProfileImage()}}"
+                                             class="rounded-full">
+                                    </div>
+                                </td>
+                                <td data-label="Name">{{$match->userTwo->name}}</td>
+
+                                <td data-label="Name">{{$match->userTwo->info->species}}</td>
+
+
+                                <td data-label="Date">
+                                    <small class="text-gray-500">{{$match->created_at}}</small>
                                 </td>
                                 <td class="actions-cell">
                                     <div class="buttons right nowrap">

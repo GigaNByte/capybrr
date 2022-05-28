@@ -14,7 +14,7 @@
             <div class="navbar-item dropdown has-divider has-user-avatar">
                 <a class="navbar-link">
                     <div class="user-avatar">
-                        <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe"
+                        <img src="{{$user->info->getProfileImage()}}" alt="{{$user->name}}"
                              class="rounded-full">
                     </div>
 

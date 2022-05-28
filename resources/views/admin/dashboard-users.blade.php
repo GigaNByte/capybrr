@@ -31,7 +31,7 @@
                         <tr>
                             <td class="image-cell">
                                 <div class="image">
-                                    <img src="{{$user->info->getPicture()}}"
+                                    <img src="{{$user->info->getProfileImage()}}"
                                          class="rounded-full">
                                 </div>
                             </td>
@@ -39,10 +39,10 @@
                             <td data-label="Gender">{{$user->info->gender}}</td>
                             <td data-label="Age">{{$user->info->age}}</td>
                             <td data-label="location">{{$user->info->location}}</td>
-                            <td data-label="Relationship">{{$user->info->Relationship}}</td>
-                            <td data-label="Species">{{$user->info->Species}}</td>
+                            <td data-label="Relationship">{{$user->info->relationship}}</td>
+                            <td data-label="Species">{{$user->info->species}}</td>
                             <td data-label="Created">
-                                <small class="text-gray-500" title="Oct 25, 2021">{{$user->timestamp}}</small>
+                                <small class="text-gray-500" >{{$user->created_at}}</small>
                             </td>
                             <td class="actions-cell">
                                 <div class="buttons right nowrap">

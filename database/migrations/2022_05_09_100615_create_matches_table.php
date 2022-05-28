@@ -14,7 +14,7 @@ class CreateMatchesTable extends Migration
     public function up()
     {
         Schema::create('matches', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unique();
             $table->foreignId('user_one_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('user_two_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('has_user_one_liked');

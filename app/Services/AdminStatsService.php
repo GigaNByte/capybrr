@@ -16,7 +16,7 @@ class AdminStatsService
         return array(
             'users' => User::where('role','user')->count(),
             'matches' => Match::all()->count(),
-            'most_popular' =>  $most_popular,
+            'most_popular' =>  $most_popular->userOne,
            // 'matches_per_day_table' => $this->countMatchesPerDay()
         );
     }

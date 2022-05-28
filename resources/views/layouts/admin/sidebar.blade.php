@@ -6,9 +6,9 @@
         <p class="menu-label">{{ __('General') }}</p>
         <ul class="menu-list">
             <li class="active">
-                <a href="index.html">
+                <a href="{{route('admin.dashboard')}}">
                     <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-                    <span class="menu-item-label">Dashboard</span>
+                    <span class="menu-item-label">{{ __('Dashboard') }}</span>
                 </a>
             </li>
         </ul>

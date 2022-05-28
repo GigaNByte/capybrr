@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Storage;
 
 class UserInfo extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'user_id',
         'name',
@@ -26,8 +28,9 @@ class UserInfo extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function getPicture()
+    public function getProfileImage()
     {
+
         if ($this->profile_image == null) {
             return Storage::url('app/images/default.png');
         }

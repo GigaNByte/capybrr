@@ -26,13 +26,10 @@
                     </x-button>
                 </div>
             </form>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 
-            <form method="POST" action="{{ route('logout') }}">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
-
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __('Log Out') }}
-                </button>
             </form>
         </div>
     </x-auth-card>
