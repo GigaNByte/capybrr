@@ -32,9 +32,29 @@ class UserInfoFactory extends Factory
     }
 
     private array $pictures = [
-        'images/capybaras/cap_1.jpg',
         'images/capybaras/cap_2.jpg',
         'images/capybaras/cap_3.jpg',
+        'images/capybaras/cap_5.jpg',
+        'images/capybaras/cap_6.jpg',
+        'images/capybaras/cap_7.jpg',
+        'images/capybaras/cap_8.jpg',
+        'images/capybaras/cap_9.jpg',
+        'images/capybaras/cap_10.jpg',
+        'images/capybaras/cap_11.jpg',
+        'images/capybaras/cap_12.jpg',
+        'images/capybaras/cap_13.jpg',
+        'images/capybaras/cap_14.jpg',
+        'images/capybaras/cap_15.jpg',
+        'images/capybaras/cap_16.jpg',
+        'images/capybaras/cap_17.jpg',
+        'images/capybaras/cap_18.jpg',
+        'images/capybaras/cap_19.jpg',
+        'images/capybaras/cap_20.jpg',
+        'images/capybaras/cap_21.jpg',
+        'images/capybaras/cap_22.jpg',
+        'images/capybaras/cap_23.jpg',
+        'images/capybaras/cap_24.jpg',
+        'images/capybaras/cap_25.jpg',
     ];
 
     private array $descriptions = [
@@ -43,6 +63,23 @@ class UserInfoFactory extends Factory
         "Trippin Capybara",
         "I believe in Capybara supremacy",
         "I'm just a coconut dog",
-        "Howdy"
+        "Howdy",
+        "I'm water Capibaros",
+        "Muchos Capibaros",
+        "I'm inside your home",
+        "Chillin' n' drippin'",
+        "I like coffee especially Capycinno",
+        "I'm Chonky Boi",
+        "Rodentus Maximus",
+        "I can confirm that capybaras WILL pull up and hop out at the after party",
+        "I invade human homes and steal their food",
+        "I like shrimps not SIMPS",
+        "Say my name",
+        "His Enormous Flofness",
+        "The coconut nut is a giant nut. If you eat too much, you'll get very fat",
+        "I like them Big, i like them CHONKY",
+        "The only bug or mistake in this app is me",
+        "Sigma Capybara",
+        "OK I PULL UP"
     ];
 }

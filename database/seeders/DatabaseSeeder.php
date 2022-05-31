@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        $users = 10;
+        $users = 28;
         User::factory($users)->create([
             'password' => Hash::make(env("CAPIBRR_USER_DEFAULT_PASSWD", ""))
         ]);
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin'
         ]);
         Interest::factory(5)->create();
-        UserInfo::factory($users)->create();
+        UserInfo::factory($users+1)->create();
 
         //Manualy adding matches because of two columns being unique
 

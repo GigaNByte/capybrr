@@ -25,4 +25,16 @@ class Match extends Model
     {
         return $this->belongsTo(User::class, 'user_two_id');
     }
+
+    public function isMatch()
+    {
+        $user_one = $this->attributes['user_one_id'];
+        $user_two = $this->attributes['user_two_id'];
+
+        return $this->where('user_one_id',$user_one)
+           ->where('user_two_id',$user_two)
+           ->where('has_user_one_liked',$user_one)
+           ->where('has_user_two_liked',$user_two)->exists();
+    }
+
 }

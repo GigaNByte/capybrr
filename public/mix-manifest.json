@@ -2,9 +2,13 @@
     "/js/app.js": "/js/app.js",
     "/js/admin.js": "/js/admin.js",
     "/js/user.js": "/js/user.js",
+    "/fonts/Montserrat-Bold.ttf": "/fonts/Montserrat-Bold.ttf",
+    "/fonts/VarelaRound-Regular.ttf": "/fonts/VarelaRound-Regular.ttf",
+    "/resources/views/vendor/jsvalidation/bootstrap.php": "/resources/views/vendor/jsvalidation/bootstrap.php",
+    "/resources/views/vendor/jsvalidation/bootstrap4.php": "/resources/views/vendor/jsvalidation/bootstrap4.php",
+    "/resources/views/vendor/jsvalidation/bootstrap5.php": "/resources/views/vendor/jsvalidation/bootstrap5.php",
+    "/resources/views/vendor/jsvalidation/uikit.php": "/resources/views/vendor/jsvalidation/uikit.php",
     "/css/user.css": "/css/user.css",
     "/css/admin.css": "/css/admin.css",
-    "/css/app.css": "/css/app.css",
-    "/fonts/Montserrat-Bold.ttf": "/fonts/Montserrat-Bold.ttf",
-    "/fonts/VarelaRound-Regular.ttf": "/fonts/VarelaRound-Regular.ttf"
+    "/css/app.css": "/css/app.css"
 }

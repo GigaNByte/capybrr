@@ -15,10 +15,30 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+
+    <!-- Scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Laravel Javascript Validation -->
+    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
 </head>
 <body>
-<div class="font-sans text-gray-900 antialiased">
-    {{ $slot }}
-</div>
+    <header class="relative flex items-center justify-center overflow-hidden">
+        <video autoplay loop muted class="absolute z-10 w-auto min-w-full min-h-full max-w-none brightness-50">
+            <source
+                src="{{ URL::asset('storage/videos/capybara.mp4') }}"
+                type="video/mp4"/>
+            Your browser does not support the video tag.
+        </video>
+        <div class="relative z-30 p-5 text-2xl text-white bg-opacity-100 rounded-xl">
+            <div class="font-sans text-gray-900 antialiased">
+                {{ $slot }}
+            </div>
+        </div>
+    </header>
+    <main class="section main-section">
+    </main>
+    @include('layouts.guest.footer')
 </body>
 </html>

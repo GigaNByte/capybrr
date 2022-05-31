@@ -12,5 +12,5 @@
 }
 
 .is-title-bar li:last-child {
-  @apply pr-0 font-black text-black;
+  @apply pr-0 text-pink;
 }

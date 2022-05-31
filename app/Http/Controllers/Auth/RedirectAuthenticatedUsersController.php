@@ -10,6 +10,8 @@ class RedirectAuthenticatedUsersController extends Controller
 {
     public function index()
     {
+
+
         if (auth()->user()->role == 'admin') {
             return redirect()->route('admin.dashboard');
         }

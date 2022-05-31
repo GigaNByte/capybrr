@@ -1,5 +1,5 @@
 .button {
-  @apply inline-flex bg-white text-black border-gray-50 border cursor-pointer justify-center px-4 py-2 text-center
+  @apply inline-flex rounded-md hover:bg-pink bg-white text-black border-pink border cursor-pointer justify-center px-4 py-2 text-center
     whitespace-nowrap rounded
     hover:border-gray-500
     focus:outline-none;
@@ -22,7 +22,7 @@
 }
 
 .button.active {
-  @apply border-gray-300 hover:border-gray-500;
+  @apply border-pink hover:border-gray-500;
 }
 
 .button.green {

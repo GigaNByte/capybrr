@@ -1,8 +1,8 @@
 @layer components {
+
   .field:not(:last-child) {
     @apply mb-3;
   }
-
   .field.spaced:not(:last-child) {
     @apply mb-6;
   }
@@ -109,3 +109,5 @@
     @apply absolute top-0 left-0 w-full h-full opacity-0 outline-none cursor-pointer -z-1;
   }
 }
+
+

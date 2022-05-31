@@ -17,8 +17,8 @@ class CreateMatchesTable extends Migration
             $table->id()->unique();
             $table->foreignId('user_one_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('user_two_id')->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('has_user_one_liked');
-            $table->boolean('has_user_two_liked');
+            $table->boolean('has_user_one_liked')->default(false);
+            $table->boolean('has_user_two_liked')->default(false);;
             $table->timestamps();
 
         });

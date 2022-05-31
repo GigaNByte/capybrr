@@ -20,7 +20,7 @@ class CreateUsersInfoTable extends Migration
             $table->string('location');
             $table->enum('gender',['Male', 'Female']);
             $table->unsignedInteger('age');
-            $table->string('profile_image');
+            $table->string('profile_image')->nullable();
             $table->enum('relationship',['Single', 'Complicated', 'Taken', 'Married']);
             $table->string('description',180);
             $table->enum('species',['Floppa','Capybara']);

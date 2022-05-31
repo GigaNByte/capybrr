@@ -20,8 +20,6 @@ class AdminDashboardController extends Controller
     public function index(): View
     {
         $user = auth()->user();
-
-
         return view('admin.dashboard', [
             'user' => $user,
             'stats' => $this->adminStatsService->getStats()
@@ -33,7 +31,7 @@ class AdminDashboardController extends Controller
         $user = auth()->user();
         return view('admin.dashboard-matches', [
             'user' => $user,
-            'matches' => Match::All(),
+            'matches' => Match::paginate(5),
         ]);
     }
     public function users(): View
@@ -41,7 +39,7 @@ class AdminDashboardController extends Controller
         $user = auth()->user();
         return view('admin.dashboard-users', [
             'user' => $user,
-            'users' => User::All()
+            'users' => User::paginate(5)
         ]);
     }
 }

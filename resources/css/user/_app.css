@@ -27,5 +27,7 @@ body {
 }
 
 .form-screen .main-section {
-  @apply flex h-screen items-center justify-center;
+  @apply flex min-h-screen items-center justify-center;
 }
+
+

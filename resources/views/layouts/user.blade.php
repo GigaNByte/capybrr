@@ -11,19 +11,26 @@
         <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
         <!-- Scripts -->
         <script src="{{ asset('js/user.js') }}" defer></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- Laravel Javascript Validation -->
+        <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased min-h-screen ">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.user.navbar')
 
-            <header class="bg-white shadow">
+            <header class="bg-white shadow ">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 
                 </div>
             </header>
-            <main>
+            <main class="min-h-screen flex flex-col justify-center">
                 {{ $content }}
             </main>
+            @include('layouts.user.footer')
+
         </div>
     </body>
+
 </html>

@@ -1,0 +1,9 @@
+.card.swipe-card{
+    @apply p-0;
+}
+.swipe-card .card-content{
+    @apply p-0 sm:p-6;
+}
+.swipe-card image{
+
+}

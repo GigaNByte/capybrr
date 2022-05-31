@@ -1,7 +1,19 @@
 .image {
-  @apply block relative;
+  @apply flex justify-center relative;
+}
+.card {
+
+}
+.image img {
+    @apply block h-12 w-full max-w-full object-cover;
 }
 
-.image img {
-  @apply block h-auto w-full max-w-full;
+.image.profile img {
+    @apply h-36 w-36 justify-center flex p-4;
 }
+.image.app img{
+    @apply  justify-center flex p-0  ;
+    width:400px;
+    height:624px;
+}
+

@@ -32,12 +32,16 @@ Route::group(['middleware' => 'auth'], function() {
     });
     Route::group(['middleware' => 'verifyRole:user'], function() {
         Route::get('/dashboard', [UserDashboardController::class,'index'])->name('user.dashboard');
-        Route::get('/matches', [UserMatchesController::class,'index'])->name('user.matches');
+        Route::get('/dashboard/matches', [UserDashboardController::class,'matches'])->name('user.dashboard.matches');
+        Route::get('/dashboard/settings', [UserDashboardController::class,'settings'])->name('user.dashboard.settings');
         Route::post('/user/update/info', [UserDashboardController::class,'updateInfo'])->name('user.updateInfo');
         Route::put('/user/update/image', [UserDashboardController::class,'updateProfileImage'])->name('user.updateProfileImage');
         Route::delete('/user/delete', [UserDashboardController::class,'deleteUser'])->name('user.delete');
         Route::get('/app', [UserAppController::class,'index'])->name('user.app');
-        Route::post('/like/{id}', [UserAppController::class,'like'])->name('user.app.like');
+        Route::put('/like/{id}', [UserAppController::class,'like'])->name('user.app.like');
+
+
+
     });
 });
 

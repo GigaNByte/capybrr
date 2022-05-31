@@ -1,0 +1,61 @@
+.help-block{
+    @apply text-sm;
+}
+ .form-input,.form-textarea, .form-select{
+    @apply rounded-md shadow-sm border-pink bg-lightpink focus:border-pink focus:ring focus:ring-pink focus:ring-opacity-50;
+}
+ .error-help-block{
+    @apply text-red-600;
+}
+.has-error .form-input ,.has-error .form-select ,.has-error  .form-textarea{
+    @apply border-red-600 focus:ring-red-600;
+}
+.form-label{
+    @apply block font-medium text-sm text-gray-700;
+}
+
+#update-form .error-help-block{
+    @apply block w-full text-center py-4;
+}
+
+#update-form .form-label{
+    @apply  text-xl;
+}
+#update-form .form-group{
+    @apply flex flex-wrap ;
+}
+
+
+#update-form .form-group > .form-label{
+    @apply basis-full lg:basis-1/3;
+}
+#update-form .form-group > .form-select,#update-form .form-group > .form-input{
+    @apply basis-full  lg:basis-2/3 text-center lg:text-left;
+}
+#update-form   {
+    @apply basis-full;
+}
+#update-form .form-label{
+    @apply flex justify-start items-center text-left;
+}
+#update-form .form-group.full{
+    @apply block mt-10;
+}
+#update-form .form-group label:before,.input-image-link:before {
+    @apply items-center justify-end flex mx-4 text-pink;
+    font-family:'Material Design Icons';
+    content: "\F3EB";
+}
+#update-form textarea{
+    @apply my-4;
+}
+.input-image-link{
+    @apply  text-pink hover:cursor-pointer flex;
+}
+
+#update-form .form-input,#update-form .form-textarea,#update-form  .form-select{
+    @apply shadow-none focus:rounded-md focus:shadow-sm border-none bg-white focus:bg-lightpink focus:border-pink focus:ring focus:ring-pink focus:ring-opacity-50;
+}
+#update-form .has-error > .form-input, #update-form .has-error > .form-select,#update-form .has-error > .form-textarea{
+    @apply  border-solid border-red-900;
+}

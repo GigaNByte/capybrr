@@ -12,7 +12,7 @@
                                 {{ $stats['users'] }}
                             </h1>
                         </div>
-                        <span class="icon widget-icon text-green-500"><i class="mdi mdi-account-multiple mdi-48px"></i></span>
+                        <span class="icon widget-icon text-pink"><i class="mdi mdi-account-multiple mdi-48px"></i></span>
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                                 {{ $stats['matches'] }}
                             </h1>
                         </div>
-                        <span class="icon widget-icon text-blue-500"><i class="mdi mdi-heart mdi-48px"></i></span>
+                        <span class="icon widget-icon text-pink"><i class="mdi mdi-heart mdi-48px"></i></span>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                                 {{ $stats['most_popular']->name }}
                             </h1>
                         </div>
-                        <span class="icon widget-icon text-red-500"><i class="mdi mdi-finance mdi-48px"></i></span>
+                        <span class="icon widget-icon text-pink"><i class="mdi mdi-finance mdi-48px"></i></span>
                     </div>
                 </div>
             </div>

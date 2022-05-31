@@ -28,3 +28,5 @@ mix.js('resources/js/user.js', 'public/js').postCss('resources/css/user.css', 'p
     require('autoprefixer'),
 ]);
 mix.copyDirectory('resources/fonts', 'public/fonts');
+mix.copy('vendor/proengsoft/laravel-jsvalidation/resources/views', 'resources/views/vendor/jsvalidation')
+    .copy('vendor/proengsoft/laravel-jsvalidation/public', 'public/vendor/jsvalidation');

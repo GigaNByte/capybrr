@@ -32,7 +32,7 @@ class UserInfo extends Model
     {
 
         if ($this->profile_image == null) {
-            return Storage::url('app/images/default.png');
+            return Storage::url('images/capybaras/cap_3.jpg');
         }
         return Storage::url($this->profile_image);
     }

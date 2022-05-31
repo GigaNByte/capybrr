@@ -1,7 +1,6 @@
 .icon {
   @apply inline-flex justify-center items-center w-6 h-6;
 }
-
 .icon.widget-icon {
   @apply w-20 h-20;
 }
@@ -12,4 +11,7 @@
 
 .icon i {
   @apply inline-flex;
+}
+.icon.big .mdi,.icon.big .mdi::before{
+    font-size:9rem;
 }

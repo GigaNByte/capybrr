@@ -10,6 +10,11 @@ module.exports = {
 
     theme: {
         extend: {
+            colors:{
+                'pink':'#c9007d',
+                'lightpink':'#FFD6EF',
+                'darky':'#520035'
+            },
             fontFamily: {
                 sans: ['Varela Round','Montserrat', ...defaultTheme.fontFamily.sans],
             },

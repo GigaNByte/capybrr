@@ -1,0 +1,10 @@
+h1{
+    @apply font-['Montserrat']  font-bold text-pink
+}
+.button-global{
+    @apply text-xs items-center px-4 py-2 bg-pink border border-transparent w-full text-center hover:border-pink rounded-md font-semibold  text-white hover:text-pink uppercase tracking-widest hover:bg-white active:bg-white focus:outline-none focus:border-pink focus:ring ring-pink disabled:opacity-25 transition ease-in-out duration-150;
+}
+.button-global.big{
+    @apply text-lg
+}
+

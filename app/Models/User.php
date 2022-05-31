@@ -54,28 +54,25 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Interest::class,'interests_users','user_id','interest_id')->withTimestamps();
     }
-    public function match(User $foreignUser)
-    {
-        $thisMatched = $this->belongsToMany(User::class, 'matches',
-            'user_one_id', 'user_two_id')->getResults();
 
-        $matchedThis = $this->belongsToMany(User::class, 'matches',
-            'user_two_id', 'user_one_id')->getResults();
 
-        if (isset($thisMatched[0]->attributes['id']) && isset($matchedThis[0]->attributes['id'])) {
-            return $foreignUser;
-        } else {
-            return null;
-        }
-    }
+
     public function userLiked()
     {
-        return $this->belongsToMany('App\Models\User', 'matches', 'user_two_id', 'user_one_id')->withTimestamps();;
+        return $this->belongsToMany(User::class, 'matches', 'user_two_id', 'user_one_id')->withTimestamps();;
     }
-
     public function likedUser()
     {
-        return $this->belongsToMany('App\Models\User', 'matches', 'user_one_id', 'user_two_id')->withTimestamps();;
+        return $this->belongsToMany(User::class, 'matches', 'user_one_id', 'user_two_id')->withTimestamps();;
     }
+
+    public function scopeUserWithoutReactionQuery($query, $id)
+    {
+        return $query->whereDoesntHave('userLiked', function ($query) use ($id) {
+            $query->where('user_one_id', $id);
+        });
+    }
+
+
 
 }
