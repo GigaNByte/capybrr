@@ -22,9 +22,10 @@
                     </div>
                     <div class="flex items-center justify-center p-5">
                         <div class="widget-label w-full text-center flex justify-center">
-                            <form id="like-form" class="px-10" action="{{ route('user.app.like', ['id' => $suggestedUser->id ]) }}" method="PUT" >
-                                @method('PUT')
-                                {{ csrf_field() }}
+                            <form id="like-form" class="px-10" action="{{ route('user.app.like', ['id' => $suggestedUser->id ]) }}" method="post" >
+                                @csrf
+                                @method('put')
+
                                 <x-button type="submit" class="my-4 block big shadow-md"> {{__('WOW')}}</x-button>
                             </form>
                             <a class="px-10" href="{{route('user.app')}}"><x-button class="my-4 block big shadow-md"> {{__('Meh')}}</x-button></a>

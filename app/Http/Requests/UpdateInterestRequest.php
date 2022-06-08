@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Interest;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateMatchLikeRequest extends FormRequest
+class UpdateInterestRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +24,12 @@ class UpdateMatchLikeRequest extends FormRequest
      */
     public function rules()
     {
+
+        $ignoreId = Interest::find(request()->id);
+
         return [
-            'id' => ['required', 'exists:users,id'],
+            'name' => ['required', 'string', 'min:1', 'max:255', \Illuminate\Validation\Rule::unique('interests')->ignore($ignoreId)],
+            'icon' => ['required', 'string', 'min:1', 'max:255'],
         ];
     }
 }

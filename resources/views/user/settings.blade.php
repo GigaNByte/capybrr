@@ -14,7 +14,7 @@
                             </div>
                             <div class="text-center upload">
                                 <form id="form-update-image" action="{{ route('user.updateProfileImage') }}"
-                                      enctype="multipart/form-data" method="put">
+                                      enctype="multipart/form-data" method="post">
                                     @csrf
                                     @method('put')
                                     <div>
@@ -44,6 +44,7 @@
                             <x-auth-validation-errors class="my-5" :errors="$errors"/>
 
                             <form id="update-form" class="my-10" method="POST" action="{{ route('user.updateInfo') }}">
+                            @method('post')
                             @csrf
 
                             <!-- Name -->
@@ -53,6 +54,7 @@
                                     <x-input id="name" class="block mt-1 w-full" type="text" name="name"
                                              :value="$user->name" required
                                              autofocus/>
+
                                 </div>
                                 <!-- Email Address -->
                                 <div class="mt-4 form-group">
@@ -60,6 +62,7 @@
 
                                     <x-input id="email" class="block mt-1 w-full" type="email" name="email"
                                              :value="$user->email" required/>
+
                                 </div>
 
 

@@ -15,28 +15,24 @@ class UserReactionService
 
         if ($match = Match::where('user_one_id',$user)->where('user_two_id',$suggestedUser)->first()) {
             $match->update([
-                'has_user_one_liked' => True
+                'has_user_one_liked' => true
             ]);
 
         }
          else if ($match = Match::where('user_two_id',$user)->where('user_one_id',$suggestedUser)->first()){
              $match->Update([
-                'has_user_two_liked' => True
+                'has_user_two_liked' => true
             ]);
-
         }else{
              $match = Match::create([
                  'user_one_id' => $user,
                  'user_two_id' => $suggestedUser,
-                 'has_user_one_liked'=> True
+                 'has_user_one_liked'=> true
              ]);
          }
 
-        if ($match->isMatch()){
-            return true;
-        }else{
-            return false;
-        }
+        return $match->isMatch();
+
     }
 
 

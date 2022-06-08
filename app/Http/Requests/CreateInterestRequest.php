@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateMatchLikeRequest extends FormRequest
+class CreateInterestRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class UpdateMatchLikeRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => ['required', 'exists:users,id'],
+            'name' => ['required', 'string', 'min:1', 'max:255','unique:interests'],
+            'icon' => ['required', 'string', 'min:1', 'max:255'],
         ];
     }
 }

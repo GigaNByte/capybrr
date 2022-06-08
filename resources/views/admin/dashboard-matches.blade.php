@@ -6,7 +6,7 @@
                     <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
                     {{ __('Matches') }}
                 </p>
-                <a href="#" class="card-header-icon">
+                <a href="{{url()->current()}}" class="card-header-icon" >
                     <span class="icon"><i class="mdi mdi-reload brr-reload"></i></span>
                 </a>
             </header>

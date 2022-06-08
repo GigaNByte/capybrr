@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Interest;
 use App\Models\Match;
 use App\Models\User;
 use App\Services\AdminStatsService;
@@ -23,6 +24,14 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard', [
             'user' => $user,
             'stats' => $this->adminStatsService->getStats()
+        ]);
+    }
+    public function interests(): View
+    {
+        $user = auth()->user();
+        return view('admin.dashboard-interests', [
+            'user' => $user,
+            'interests' => Interest::paginate(10),
         ]);
     }
 

@@ -36,12 +36,16 @@
                     <span class="icon"><i class="mdi mdi-github-circle"></i></span>
                     <span>{{ __('GitHub') }}</span>
                 </a>
+                <a href="{{ config('app.github', 'https://github.com/GigaNByte/capybrr') }}" class="navbar-item has-divider desktop-icon-only flex sm:justify-center">
+                    <span class="icon"><i class="mdi mdi-help-circle-outline"></i></span>
+                    <span>{{ __('GitHub') }}</span>
+                </a>
                 <a href="{{route('logout')}}" title="Log out" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="navbar-item desktop-icon-only flex sm:justify-center">
                     <span class="icon"><i class="mdi mdi-logout"></i></span>
                     <span>{{ __('Log Out') }}</span>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
+                    @csrf
                 </form>
             </div>
         </div>

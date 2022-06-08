@@ -40,6 +40,8 @@ class UserDashboardController extends Controller
     public function updateInfo(UpdateUserInfoRequest $request): RedirectResponse
     {
         $user = auth()->user();
+
+
         $user->update([
             'password' => Hash::make($request->get('password')),
             'name' => $request->get('name'),
@@ -64,22 +66,14 @@ class UserDashboardController extends Controller
     public function updateProfileImage(UpdateUserProfileImageRequest $request): RedirectResponse
     {
         $user = auth()->user();
-
         //Storage::disk('public')->delete($user->info->profile_image);
 
         $user->info->update([
             'profile_image' => $request->file('picture')->store('profileImages', 'public')
         ]);
-        return redirect()
-            ->back()
+        return redirect(route('user.dashboard.settings'))
             ->with('status', __('Image has been updated.'));
     }
 
-    public function deleteUser(): RedirectResponse
-    {
-        $user = Auth::user();
-        $user->delete();
 
-        return redirect(route('login'));
-    }
 }

@@ -29,7 +29,6 @@
                 {{ $content }}
             </main>
             @include('layouts.user.footer')
-
         </div>
     </body>
 
