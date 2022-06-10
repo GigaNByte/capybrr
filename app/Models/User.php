@@ -61,18 +61,26 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class, 'matches', 'user_two_id', 'user_one_id')->withTimestamps();;
     }
+
     public function likedUser()
     {
         return $this->belongsToMany(User::class, 'matches', 'user_one_id', 'user_two_id')->withTimestamps();;
     }
+//create scope query for users who was not matched or liked
+
+
 
     public function scopeUserWithoutReactionQuery($query, $id)
     {
         return $query->whereDoesntHave('userLiked', function ($query) use ($id) {
-            $query->where('user_one_id', $id);
-        });
+            $query->where([['user_one_id', $id],['has_user_one_liked',true]])
+                ->orWhere([['user_two_id',$id], ['has_user_two_liked',true]]);
+        })->WhereDoesntHave('userLiked', function ($query) use ($id) {
+            $query->where([['has_user_two_liked', true], ['has_user_one_liked', true]]);
+        })->WhereDoesntHave('likedUser', function ($query) use ($id) {
+            $query->where([['has_user_two_liked', true], ['has_user_one_liked', true]]);
+        });;
     }
-
 
 
 }

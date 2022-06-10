@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateMatchLikeRequest;
+use App\Models\Match;
+use App\Models\User;
 use App\Services\SuggestedUserService;
 use App\Services\UserReactionService;
+use Illuminate\Contracts\Validation\ValidatorAwareRule;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -29,20 +32,37 @@ class UserAppController extends Controller
             'suggestedUser' => $this->suggestedUserService->getUser($user),
         ]);
     }
-    public function like(UpdateMatchLikeRequest $request, $likedUser): RedirectResponse
+    public function like(Request $request, $likedUser): RedirectResponse
     {
-        $user = auth()->user();
+        $request->merge(['id' => $request->route('id')]);
 
+        $user = auth()->user();
+        $validator = $request->validate([
+            'id' =>  ['required', 'exists:users,id'],
+        ]);
+
+        $likedUserObj =  User::find($likedUser);
 
         if ($this->userReactionService->likeUser($user->id,$likedUser)){
-           $recentMatch = $likedUser;
+            return redirect()->back()->with('status', __("It's a Match! User") . $likedUserObj->name  .__(" has been matched!") . __(" Go to matches page to see contact details!"));
         }else{
-            $recentMatch = null;
+            return redirect()->back()->with('status', __("User ") . $likedUserObj->name  .__(" has been liked!"));
         }
+    }
+    public function unlike(Request $request, $unlikedUser): RedirectResponse
+    {
+        $request->merge(['id' => $request->route('id')]);
 
-        return redirect()->action(
-            [get_class($this), 'index'], ['recentMatch' => $recentMatch]
-        );
+        $validator = $request->validate([
+            'id' =>  ['required', 'exists:users,id'],
+        ]);
+
+        $user = auth()->user();
+        $unlikedUserObj  = User::find($unlikedUser);
+
+        $this->userReactionService->unlikeUser($user->id,$unlikedUser);
+
+        return redirect()->back()->with('status', __("User ") . $unlikedUserObj->name  .__(" has been unliked"));
 
     }
 }

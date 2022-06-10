@@ -6,7 +6,7 @@
                     <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
                     {{ __('Matches') }}
                 </p>
-                <a href="{{url()->current()}}" class="card-header-icon" >
+                <a href="#" class="card-header-icon">
                     <span class="icon"><i class="mdi mdi-reload brr-reload"></i></span>
                 </a>
             </header>
@@ -51,12 +51,14 @@
                                 </td>
                                 <td class="actions-cell">
                                     <div class="buttons right nowrap">
-                                        <button class="button small blue --jb-modal" data-target="sample-modal-2" type="button">
-                                            <span class="icon"><i class="mdi mdi-eye"></i></span>
-                                        </button>
-                                        <button class="button small red --jb-modal" data-target="sample-modal" type="button">
-                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
-                                        </button>
+                                        <form id="delete-form-{{$match->id}}" method="post"
+                                              action="{{ route('admin.match.delete',['id'=>$match->id]) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="button small red --jb-modal" type="submit">
+                                                <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </td>
                             </tr>

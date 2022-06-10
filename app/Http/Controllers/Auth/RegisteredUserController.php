@@ -36,7 +36,6 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request)
     {
-        $request->validate();
 
         $role = "user";
         if ( $request->email == env("CAPIBRR_ADMIN_EMAIL", "")){

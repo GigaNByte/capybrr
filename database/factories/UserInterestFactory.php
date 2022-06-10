@@ -17,7 +17,10 @@ class UserInterestFactory extends Factory
     public function definition()
     {
         $user = User::all()->unique()->random(1)[0];
+        //get random interest from all interests except the user's interest
         $interest = Interest::all()->unique()->random(1)[0];
+
+
 
         return [
             'user_id' => $attributes['user_id'] ?? $user->id,

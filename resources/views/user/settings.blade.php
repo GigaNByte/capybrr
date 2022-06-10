@@ -24,20 +24,23 @@
                                                    required="" multiple>
                                             <a class="input-image-link">{{__("Change image")}}</a>
                                         </label>
-                                        @if (\Session::has('status'))
-                                            <div>{{Session::get('status')}} </div>
-                                        @endif
+
 
                                     </div>
                                 </form>
                                 {!! JsValidator::formRequest('App\Http\Requests\UpdateUserProfileImageRequest', '#form-update-image'); !!}
                             </div>
+
+
                             <h1 class="text-pink mt-5">
                                 <span class> {{ $user->name }}
                             </h1>
                             <div id="joined">Joined {{ $user->created_at->format('d M Y') }}</div>
                         </div>
                     </div>
+                    @if (\Session::has('status'))
+                        <div class="text-center">{{Session::get('status')}} </div>
+                    @endif
                     <div class="flex items-center justify-between p-5">
                         <div class="widget-label text-center">
                             <h3>{{__('Your Account Details')}}</h3>
@@ -83,15 +86,6 @@
                                              required autofocus/>
                                 </div>
                                 <div class="mt-4 form-group">
-                                    <x-label for="gender" :value="__('Gender')"/>
-
-                                    <select id="gender" class=" form-select block mt-1 w-full" type="text" name="gender"
-                                            :value="$user->info->gender" required autofocus>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                    </select>
-                                </div>
-                                <div class="mt-4 form-group">
                                     <x-label for="age" :value="__('Age')"/>
 
                                     <x-input id="age" class="block mt-1 w-full" type="number" name="age"
@@ -113,7 +107,33 @@
                                     <x-label for="description" class="block" :value="__('Your profile description')"/>
                                     <textarea id="description" class="block form-textarea mt-1 w-full" name="description"  value="{{$user->info->description}}" required autofocus>{{$user->info->description}}</textarea>
                                 </div>
+                                <h3 class="my-10">{{__("Interests")}}</h3>
 
+                                <div class="mt-4 flex  flex-col justify-center items-center">
+
+                                @if($interests && !empty($interests))
+                                        @foreach($interests as $interest)
+                                            <div class="flex  w-full  justify-center flex ">
+                                                <div class="basis-1/5 d-block "><i class="flex  justify-center items-center  mdi h-full {{$interest->icon}}"></i></div>
+                                            <x-label for="{{$interest->name}}" class="p-5 basis-3/5 text-center" :value="$interest->name"/>
+                                                <div  class="basis-1/5 justify-center flex items-center">
+                                            <input id="{{$interest->name}}" type="checkbox" name="interests[]"
+                                                   value="{{$interest->id}}"
+                                                   @if($user->interests->contains($interest->id)) checked @endif
+                                                   autofocus/>
+                                            </div>
+                                            </div>
+                                        @endforeach
+                                @endif
+                                    <div class="flex items-center justify-end mt-4">
+                                        <x-button type="submit" class="my-8 big "> {{__('Update Profile')}}</x-button>
+                                    </div>
+                            </form>
+                            {!! JsValidator::formRequest('App\Http\Requests\UpdateUserInfoRequest', '#update-form'); !!}
+                                </div>
+                        <form id="update-pass-form" class="my-10" method="POST" action="{{ route('user.update.password') }}">
+                            @method('post')
+                            @csrf
                                 <h3 class="my-10">{{__("Change Password")}}</h3>
                                 <!-- Password -->
                                 <div class="mt-4 form-group">
@@ -135,10 +155,10 @@
                                 </div>
 
                                 <div class="flex items-center justify-end mt-4">
-                                    <x-button class="my-8 big "> {{__('Update profile')}}</x-button>
+                                    <x-button type="submit" class="my-8 big "> {{__('Update Password')}}</x-button>
                                 </div>
                             </form>
-                            {!! JsValidator::formRequest('App\Http\Requests\UpdateUserInfoRequest', '#update-form'); !!}
+                            {!! JsValidator::formRequest('App\Http\Requests\UpdateUserInfoRequest', '#update-pass-form'); !!}
 
 
                         </div>

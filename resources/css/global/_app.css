@@ -7,4 +7,7 @@ h1{
 .button-global.big{
     @apply text-lg
 }
+.max-w-5r{
+  width: 10rem;
+}
 

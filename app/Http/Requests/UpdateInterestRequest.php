@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\Interest;
+
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateInterestRequest extends FormRequest
@@ -25,6 +26,8 @@ class UpdateInterestRequest extends FormRequest
     public function rules()
     {
 
+        request()->merge(['id' => request()->route('id')]);
+        $this->merge(['id' => request()->id]);
         $ignoreId = Interest::find(request()->id);
 
         return [

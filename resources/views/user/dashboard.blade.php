@@ -1,7 +1,7 @@
 <x-user-layout :user="$user">
     <x-slot name="content">
-        <div class="flex justify-center my-20 ">
-            <div class="card swipe-card">
+        <div class="">
+            <div class="card max-w-md m-auto my-10">
                 <div class="card-content">
                     <div class="flex items-center align justify-center p-5">
                         <div class="widget-label text-center">
@@ -17,7 +17,7 @@
                             </h1>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between p-5">
+                    <div class="flex items-center justify-center p-5">
                         <div class="widget-label text-center">
                             <p>{{__('Welcome to Capybrr')}}</p>
                             <p>{{__('Are you ready to discover some new friends?')}}</p>
@@ -26,9 +26,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="flex justify-center m-10">
-            <div class="card">
+
+            <div class="card max-w-md m-auto my-10">
                 <div class="card-content">
                     <div class="flex items-center align justify-center p-5">
                         <div class="widget-label text-center">
@@ -40,7 +39,7 @@
                             </h1>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between p-5">
+                    <div class="flex items-center justify-center p-5">
                         <div class="widget-label text-center">
                             <p>{{__('Moto Moto likes you!')}}</p>
                             <p>{{__('Want to check your new soulmates?')}}</p>
@@ -49,9 +48,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="flex justify-center m-10">
-            <div class="card">
+
+
+            <div class="card max-w-md m-auto my-10">
                 <div class="card-content">
                     <div class="flex items-center align justify-center p-5">
                         <div class="widget-label text-center">
@@ -64,7 +63,7 @@
                             </h1>
                         </div>
                     </div>
-                    <div class="flex items-center justify-between p-5">
+                    <div class="flex items-center justify-center p-5">
                         <div class="widget-label text-center">
                             <p>{{__('Your account details')}}</p>
                             <p>{{__('Want to change anything?')}}</p>

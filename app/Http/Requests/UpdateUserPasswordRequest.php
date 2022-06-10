@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules;
 
-class UpdateMatchLikeRequest extends FormRequest
+class UpdateUserPasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +25,7 @@ class UpdateMatchLikeRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => ['required', 'exists:users,id'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ];
     }
 }

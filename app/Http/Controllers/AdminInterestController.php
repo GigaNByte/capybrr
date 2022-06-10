@@ -12,8 +12,6 @@ class AdminInterestController extends Controller
 {
     public function create(CreateInterestRequest $request): RedirectResponse
     {
-
-
         Interest::create([
             'name' => $request->get('name'),
             'icon' => $request->get('icon'),
@@ -24,8 +22,14 @@ class AdminInterestController extends Controller
             ->with('status', __('New Interest has been added'));
     }
 
-    public function delete($id): RedirectResponse
+    public function delete(Request $request, $id)
     {
+        $request->merge(['id' => $request->route('id')]);
+
+        $validator = $request->validate([
+            'id' =>  ['required', 'exists:interests,id'],
+        ]);
+
         $name = Interest::find($id)->name;
         Interest::find($id)->delete();
         return redirect()
@@ -33,8 +37,14 @@ class AdminInterestController extends Controller
             ->with('status', __('Interest') . ' ' . $name . ' ' . __('has been deleted'));
     }
 
-    public function update(UpdateInterestRequest $request,$id): RedirectResponse
+    public function update(UpdateInterestRequest $request,$id)
     {
+        $request->merge(['id' => $request->route('id')]);
+
+        $validator = $request->validate([
+            'id' =>  ['required', 'exists:interests,id'],
+        ]);
+
         $interest = Interest::find($id);
         $name = $request->name;
 

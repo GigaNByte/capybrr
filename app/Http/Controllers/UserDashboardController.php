@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateUserInfoRequest;
+use App\Http\Requests\UpdateUserPasswordRequest;
 use App\Http\Requests\UpdateUserProfileImageRequest;
+use App\Models\Interest;
+use App\Models\Match;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -25,15 +28,19 @@ class UserDashboardController extends Controller
     {
         $user = auth()->user();
         return view('user.matches', [
-            'user' => $user
+            'user' => $user,
+            'matches' => Match::scopeMatchesByUserIdQuery(Match::all(),$user->id)->paginate(5),
+            'liked' => Match::scopeLikesByUserIdQuery(Match::all(),$user->id)->paginate(5),
         ]);
     }
 
     public function settings(): View
     {
         $user = auth()->user();
+        $interests = Interest::all();
         return view('user.settings', [
-            'user' => $user
+            'user' => $user,
+            'interests' => $interests
         ]);
     }
 
@@ -41,18 +48,24 @@ class UserDashboardController extends Controller
     {
         $user = auth()->user();
 
+        if ($request->interests) {
+            foreach ($request->interests as $value) {
+                $user->interests()->attach([$value]);
+            }
+        }
+        $user->interests()->sync($request->interests);
+
 
         $user->update([
-            'password' => Hash::make($request->get('password')),
             'name' => $request->get('name'),
             'email' => $request->get('email'),
         ]);
+
 
         $user->info->update([
             'phone' => $request->get('phone'),
             'location' => $request->get('location'),
             'phone' => $request->get('phone'),
-            'gender' => $request->get('gender'),
             'age' => $request->get('age'),
             'relationship' => $request->get('relationship'),
             'description' => $request->get('description'),
@@ -62,7 +75,18 @@ class UserDashboardController extends Controller
             ->back()
             ->with('status', __('Profile info has been updated.'));
     }
+    public function updatePassword(UpdateUserPasswordRequest  $request){
+        $user = auth()->user();
 
+        $user->update([
+            'password' => Hash::make($request->get('password')),
+        ]);
+
+        return redirect()
+            ->back()
+            ->with('status', __('Your password has been updated.'));
+
+    }
     public function updateProfileImage(UpdateUserProfileImageRequest $request): RedirectResponse
     {
         $user = auth()->user();

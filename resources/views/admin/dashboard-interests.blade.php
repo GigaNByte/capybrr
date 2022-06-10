@@ -27,8 +27,7 @@
                             <tr>
                                 <td class="image-cell ">
                                     <div class="image flex justify-center">
-
-
+                                        <i class="mdi {{$interest->icon}}"></i>
                                     </div>
                                 </td>
                                 <td data-label="Interest">

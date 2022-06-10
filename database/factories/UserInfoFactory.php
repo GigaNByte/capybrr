@@ -31,6 +31,8 @@ class UserInfoFactory extends Factory
         ];
     }
 
+
+
     private array $pictures = [
         'images/capybaras/cap_2.jpg',
         'images/capybaras/cap_3.jpg',

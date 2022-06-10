@@ -29,21 +29,74 @@ class Match extends Model
         return $this->belongsTo(User::class, 'user_two_id');
     }
 
+
     public function isMatch()
+    {
+        return $this
+           ->where('has_user_one_liked',true)
+           ->where('has_user_two_liked',true)->exists();
+    }
+
+    public function getUserRelatedWithUserId($id)
     {
         $user_one = $this->attributes['user_one_id'];
         $user_two = $this->attributes['user_two_id'];
 
-        return $this->where('user_one_id',$user_one)
-           ->where('user_two_id',$user_two)
-           ->where('has_user_one_liked',$user_one)
-           ->where('has_user_two_liked',$user_two)->exists();
+            if ($user_one == $id){
+                return $this->userTwo;
+            }else if ($user_two == $id){
+                return $this->userOne;
+            }else{
+                return null;
+            }
     }
 
     public function scopeMatchesQuery($query)
     {
         return $query->where('has_user_one_liked',true )->where('has_user_two_liked',true );
     }
+    public function scopeLikesQuery($query)
+    {
+        return $query->where(
+            function ($query) {
+                $query->where('has_user_one_liked','!=',true)
+                    ->orWhere('has_user_two_liked','!=',true);
+            }
+        )->where(
+            function ($query) {
+                $query->where('has_user_one_liked','!=',false)
+                    ->orWhere('has_user_two_liked','!=',false);
+            }
+        );
+//       [['has_user_one_liked','!=',true],['has_user_two_liked','!=',true ]])
+//            ->where([['has_user_two_liked','!=',false],['has_user_one_liked','!=',false]]);
+
+    }
+
+    public function  scopeMatchesByUserIdQuery($query,$id)
+    {
+
+        return Match::matchesQuery($query)->where(
+            function ($query) use ($id) {
+                $query->where('user_one_id',$id )
+                    ->orWhere('user_two_id',$id);
+            }
+        );
+
+    }
+    public function  scopeLikesByUserIdQuery($query,$id)
+    {
+
+        return Match::likesQuery($query)->where(
+            function ($query) use ($id) {
+                $query->where([['user_one_id',$id],['has_user_one_liked',true]])
+                    ->orWhere([['user_two_id',$id], ['has_user_two_liked',true]]);
+            }
+        );
+
+    }
+
+
 
 
     public function MatchesPerDayFromSubMonthRawQuery(){

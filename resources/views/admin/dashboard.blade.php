@@ -39,7 +39,11 @@
                                 {{ __('The most popular Capybara') }}
                             </h3>
                             <h1>
-                                {{ $stats['most_popular']->name }}
+                                @if (isset($stats['most_popular']->name))
+                                    {{ $stats['most_popular']->name }}
+                                @else
+                                    {{ __('No Capybaras yet') }}
+                                @endif
                             </h1>
                         </div>
                         <span class="icon widget-icon text-pink"><i class="mdi mdi-finance mdi-48px"></i></span>

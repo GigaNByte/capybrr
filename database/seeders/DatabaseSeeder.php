@@ -35,28 +35,36 @@ class DatabaseSeeder extends Seeder
 
         //Manualy adding matches because of two columns being unique
 
-        for ($i = 1; $i < 5; $i++) {
-            Match::factory()->create([
-                'user_one_id' => $i,
-                'user_two_id' => $users-$i
-            ]);
-        }
+
+
         Match::factory()->create([
             'user_one_id' => 3,
             'user_two_id' => 5
         ]);
         Match::factory()->create([
             'user_one_id' => 3,
-            'user_two_id' => 9
+            'user_two_id' => 10,
+            'has_user_one_liked' => true,
+            'has_user_two_liked' => true,
         ]);
         Match::factory()->create([
-            'user_one_id' => 3,
-            'user_two_id' => 1
+            'user_one_id' => 8,
+            'user_two_id' => 3
         ]);
+        Match::factory()->create([
+            'user_one_id' => 5,
+            'user_two_id' => 4
+        ]);
+        Match::factory()->create([
+            'user_one_id' => 2,
+            'user_two_id' => 3
+        ]);
+
+
 
         for ($i = 0; $i < $users; $i++) {
             for ($j = 0; $j < 3; $j++) {
-                UserInterest::factory()->create(["user_id" => $i + 1]);
+                UserInterest::factory()->create(["user_id" => $i + 1, "interest_id" => $j+1 ]);
             }
         }
     }

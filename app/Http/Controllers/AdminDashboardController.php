@@ -40,15 +40,24 @@ class AdminDashboardController extends Controller
         $user = auth()->user();
         return view('admin.dashboard-matches', [
             'user' => $user,
-            'matches' => Match::paginate(5),
+            'matches' => Match::matchesQuery()->paginate(10),
         ]);
     }
+    public function likes(): View
+    {
+        $user = auth()->user();
+        return view('admin.dashboard-likes', [
+            'user' => $user,
+            'matches' => Match::likesQuery()->paginate(10),
+        ]);
+    }
+
     public function users(): View
     {
         $user = auth()->user();
         return view('admin.dashboard-users', [
             'user' => $user,
-            'users' => User::paginate(5)
+            'users' => User::where('role','user')->paginate(5)
         ]);
     }
 }

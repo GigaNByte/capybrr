@@ -24,15 +24,14 @@ class UpdateUserInfoRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['nullable', 'string', 'min:2', 'max:255'],
-            'email' => ['nullable', 'string', 'email', 'min:2','max:255',  \Illuminate\Validation\Rule::unique('users')->ignore($this->user()->id)],
-            'phone' => ['nullable', 'string', 'min:9','max:12',  \Illuminate\Validation\Rule::unique('user_infos')->ignore($this->user()->info)],
-            'age' => ['nullable', 'integer', 'min:1','max:99'],
-            'location' => ['nullable', 'string', 'min:2','max:255'],
-            'description' => ['nullable', 'string', 'min:5','max:180'],
-            'gender' => ['nullable', 'in:Male,Female'],
-            'relationship' => ['nullable', 'in:Single,Complicated,Taken,Married'],
-            'password' => ['nullable', 'confirmed', Rules\Password::defaults()],
+            'name' => ['required', 'string', 'min:2', 'max:255'],
+            'email' => ['required', 'string', 'email', 'min:2','max:255',  \Illuminate\Validation\Rule::unique('users')->ignore($this->user()->id)],
+            'phone' => ['required', 'string', 'min:9','max:12',  \Illuminate\Validation\Rule::unique('user_infos')->ignore($this->user()->info)],
+            'age' => ['required', 'integer', 'min:1','max:99'],
+            'location' => ['required', 'string', 'min:2','max:255'],
+            'description' => ['required', 'string', 'min:5','max:180'],
+            'relationship' => ['required', 'in:Single,Complicated,Taken,Married'],
+            'interests.*' => ['nullable','integer','exists:interests,id'],
         ];
     }
 }
