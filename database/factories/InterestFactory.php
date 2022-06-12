@@ -24,7 +24,6 @@ class InterestFactory extends Factory
         ["Eating","mdi-food-apple-outline"],
         ["Carnivore","mdi-grass"],
         ["Travel","mdi-airplane"],
-        ["Swimming","mdi-tsunami"],
         ["Sunbathing","mdi-weather-sunny"],
         ["Partying","mdi-party-popper"],
         ["Drinking","mdi-glass-cocktail"],
