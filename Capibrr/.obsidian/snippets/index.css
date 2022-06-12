@@ -1,0 +1,8 @@
+.centerImg img {
+    display: block;
+    margin: 0px auto;
+  }
+  .justify {
+    text-align: justify;
+    hyphens: auto;
+}

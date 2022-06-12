@@ -26,7 +26,7 @@ class UpdateUserInfoRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:2', 'max:255'],
             'email' => ['required', 'string', 'email', 'min:2','max:255',  \Illuminate\Validation\Rule::unique('users')->ignore($this->user()->id)],
-            'phone' => ['required', 'digits_between:0,9', 'min:9','max:12',  \Illuminate\Validation\Rule::unique('user_infos')->ignore($this->user()->info)],
+            'phone' => ['required', 'regex:/[0-9]{12}/', 'min:9','max:12',  \Illuminate\Validation\Rule::unique('user_infos')->ignore($this->user()->info)],
             'age' => ['required', 'integer', 'min:1','max:99'],
             'location' => ['required', 'string', 'min:2','max:255'],
             'description' => ['required', 'string', 'min:5','max:180'],
