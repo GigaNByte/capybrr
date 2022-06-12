@@ -32,9 +32,7 @@ class SingleMatch extends Model
 
     public function isMatch()
     {
-
         return (($this->has_user_two_liked == true) && ($this->has_user_one_liked == true));
-
     }
 
     public function getUserRelatedWithUserId($id)
