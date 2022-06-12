@@ -23,7 +23,6 @@ class VerifyRole
         if ($role == 'user' && auth()->user()->role != 'user' ) {
             abort(403);
         }
-
         return $next($request);
     }
 }

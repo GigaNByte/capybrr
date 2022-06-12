@@ -6,7 +6,7 @@ use App\Http\Requests\UpdateUserInfoRequest;
 use App\Http\Requests\UpdateUserPasswordRequest;
 use App\Http\Requests\UpdateUserProfileImageRequest;
 use App\Models\Interest;
-use App\Models\Match;
+use App\Models\SingleMatch;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -29,8 +29,8 @@ class UserDashboardController extends Controller
         $user = auth()->user();
         return view('user.matches', [
             'user' => $user,
-            'matches' => Match::scopeMatchesByUserIdQuery(Match::all(),$user->id)->paginate(5),
-            'liked' => Match::scopeLikesByUserIdQuery(Match::all(),$user->id)->paginate(5),
+            'matches' => SingleMatch::scopeMatchesByUserIdQuery(SingleMatch::all(),$user->id)->paginate(5),
+            'liked' => SingleMatch::scopeLikesByUserIdQuery(SingleMatch::all(),$user->id)->paginate(5),
         ]);
     }
 

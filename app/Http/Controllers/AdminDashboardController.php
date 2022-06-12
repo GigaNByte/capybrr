@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Interest;
-use App\Models\Match;
+use App\Models\SingleMatch;
 use App\Models\User;
 use App\Services\AdminStatsService;
 use Illuminate\Http\Request;
@@ -40,7 +40,7 @@ class AdminDashboardController extends Controller
         $user = auth()->user();
         return view('admin.dashboard-matches', [
             'user' => $user,
-            'matches' => Match::matchesQuery()->paginate(10),
+            'matches' => SingleMatch::matchesQuery()->paginate(10),
         ]);
     }
     public function likes(): View
@@ -48,7 +48,7 @@ class AdminDashboardController extends Controller
         $user = auth()->user();
         return view('admin.dashboard-likes', [
             'user' => $user,
-            'matches' => Match::likesQuery()->paginate(10),
+            'matches' => SingleMatch::likesQuery()->paginate(10),
         ]);
     }
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Interest;
-use App\Models\Match;
+use App\Models\SingleMatch;
 use Illuminate\Http\Request;
 
 class AdminMatchController extends Controller
@@ -16,8 +16,8 @@ class AdminMatchController extends Controller
             'id' =>  ['required', 'exists:matches,id'],
         ]);
 
-        $name = Match::find($id)->name;
-        Match::find($id)->delete();
+        $name = SingleMatch::find($id)->name;
+        SingleMatch::find($id)->delete();
         return redirect()
             ->route('admin.dashboard.matches')
             ->with('status', __('Match') . ' ' . $name . ' ' . __('has been deleted'));

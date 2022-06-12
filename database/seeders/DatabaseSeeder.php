@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Interest;
-use App\Models\Match;
+use App\Models\SingleMatch;
 use App\Models\User;
 use App\Models\UserInfo;
 use App\Models\UserInterest;
@@ -34,33 +34,29 @@ class DatabaseSeeder extends Seeder
         UserInfo::factory($users+1)->create();
 
         //Manualy adding matches because of two columns being unique
-
-
-
-        Match::factory()->create([
+        SingleMatch::factory()->create([
             'user_one_id' => 3,
-            'user_two_id' => 5
+            'user_two_id' => 5,
         ]);
-        Match::factory()->create([
+
+        SingleMatch::factory()->create([
             'user_one_id' => 3,
             'user_two_id' => 10,
             'has_user_one_liked' => true,
             'has_user_two_liked' => true,
         ]);
-        Match::factory()->create([
+        SingleMatch::factory()->create([
             'user_one_id' => 8,
             'user_two_id' => 3
         ]);
-        Match::factory()->create([
+        SingleMatch::factory()->create([
             'user_one_id' => 5,
             'user_two_id' => 4
         ]);
-        Match::factory()->create([
+        SingleMatch::factory()->create([
             'user_one_id' => 2,
             'user_two_id' => 3
         ]);
-
-
 
         for ($i = 0; $i < $users; $i++) {
             for ($j = 0; $j < 3; $j++) {

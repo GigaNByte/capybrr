@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateMatchLikeRequest;
-use App\Models\Match;
+use App\Models\SingleMatch;
 use App\Models\User;
 use App\Services\SuggestedUserService;
 use App\Services\UserReactionService;
