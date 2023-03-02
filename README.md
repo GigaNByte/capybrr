@@ -1,64 +1,148 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<center style="width:100px;height:100px;display:block;">
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![](./docs/capybara.png)
 
-## About Laravel
+</center>
+# Capybrr - Laravel Dating app for Capybaras
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<center>
+![](./docs/app.gif)
+</center>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their profiles, profile pictures, descriptions and interests. The dating app only allows contact information to be shared between interested couples. The administrator has the ability to supervise, edit and collect statistical information on the portal.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Project assumptions
 
-## Learning Laravel
+1. Getting to know the possibilities of the Laravel framework.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Guest:
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<center>
+![](./docs/capybrr_login.gif)
+</center>
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Create a new profile
+- Login
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### User:
 
-## Code of Conduct
+<center style="display:flex;justify-content:center;">
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![](./docs/capybrr_profile_1.png)
 
-## Security Vulnerabilities
+![](./docs/capybrr_profile_2.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+</center>
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Modification of basic personal data
+- Modification of login data
+- Modification of interests
+- Randomizing and learning user profiles
+- User like function
+- Overview of matchedusers and likedusers
+- Deleting previously added pairs of liked users
+
+### Administrator:
+
+<center style="display:flex;justify-content:center;">
+
+![](./docs/admin_panel_1.png)
+
+![](./docs/admin_panel_2.png)
+
+</center>
+
+
+- Access to portal statistics
+- Access to all users and deletion
+- Access to all some users and deletion
+- Viewing, adding, editing interests made available to users
+
+# Installation requirements:
+
+- PHP 7.4 (PHP 7.4 recommended, tested up to 8.1.6)
+- Composer
+- DatabaseMariaDb/MySql
+
+# Installation:
+
+1. Create an empty database with accesses that match the .env file
+    
+2. According to.env.example, we create database mysql/mariadb "capibrr" with login login
+    
+
+"root" without a password
+
+1. If the server uses a PHP version higher than 7.4, e.g. 8.0.6, edit the composer.json file in the eighth line of code as follows:
+
+__"php":__">=7"_
+
+After this action, you need to run the command:
+
+_composer__update_
+
+More details:
+
+[https://getcomposer.org/doc/01-basic-usage.md](https://getcomposer.org/doc/01-basic-usage.md)
+
+1. Using the composer, install the dependencies in the folder of the cloned application:
+
+_composer **install** --no-interaction_
+
+1. Then make a copy of the.env file from the.env.example file and configure it for your needs
+    
+2. Then run the following commands to load sample data into the application:
+    
+
+_php artisan migrate **php** artisan__db:seed_
+
+1. Execute the following command to generate symbolic links:
+
+_php **artisan** storage:link_
+
+1. Then start the server:
+
+_php **artisan** serve_
+
+
+<center>
+![](./docs/config.jpg)
+</center>
+
+Configuration parameters, including login details for the administrator account, default login details for generated users, database connection details are in the.env file
+
+
+
+# Technologies
+
+
+## PHP:
+
+- PHP 7.4 (PHP 7.4 recommended, tested up to 8.1.6)
+- Laravel 9.10.0 [https://laravel.com/](https://laravel.com/)
+- MariaDB 10.4.24 + PhpMyAdmin5.2.0 (xampp)
+
+## CSS:
+
+- TailwindCss 3.1.2 +PostCSSsupported by BundlerLaravelMix 
+- Material Designs Icons [https://materialdesignicons.com/](https://materialdesignicons.com/)
+- Google Fonts [https://fonts.google.com/](https://fonts.google.com/)
+
+## Js dependencies:
+
+- JQuery 3.6.0: (for laravel-jsvalidation) [https://jquery.com/](https://jquery.com/)
+
+## Php Dependencies:
+
+- Laravel/Breeze: 1.9 [https://github.com/laravel/breeze](https://github.com/laravel/breeze)
+- blade-ui-kit/blade-icons: 1.3 [https://blade-ui-kit.com/](https://blade-ui-kit.com/)
+- fakerphp/faker: 1.9.1 [https://fakerphp.github.io/](https://fakerphp.github.io/)
+- proengsoft/laravel-jsvalidation: 4.7 [https://github.com/proengsoft/laravel-jsvalidation](https://github.com/proengsoft/laravel-jsvalidation)
+- laravel-debugbar: 3.6 [https://github.com/barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
+-  PhpMyAdmin 5.2.0 (Xampp)[https://www.apachefriends.org/pl/index.html](https://www.apachefriends.org/pl/index.html)
