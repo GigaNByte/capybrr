@@ -1,7 +1,7 @@
 
 <div style="width:100px;height:100px;display:flex;justify-content:center;">
 
-![](./docs/capybara.svg | height=60)
+<img src="./docs/capybara.svg " height="60">
 
 </div>
 
@@ -20,7 +20,7 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 <center style="height:250px" >
 
-![](./docs/capybrr_login.gif  | height=250)
+<img src="./docs/capybrr_login.gif" height="250">
 
 </center>
 
@@ -34,12 +34,12 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 <div style="display:flex;justify-content:center; ">
 <div style="height:250px">
 
-![](./docs/capybrr_profile_1.png   | height=250)
+<img src="./docs/capybrr_profile_1.png" height="250">
 
 </div>
 <div style="height:250px">
 
-![](./docs/capybrr_profile_2.png   | height=250)
+<img src="./docs/capybrr_profile_2.png" height="250">
 
 </div>
 </div>
@@ -59,12 +59,12 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 <div style="height:250px">
 
-![](./docs/admin_panel_1.png   | height=250)
+<img src="./docs/admin_panel_1.png" height="250">
 
 </div>
 <div style="height:250px">
 
-![](./docs/admin_panel_2.png   | height=250)
+<img src="./docs/admin_panel_2.png" height="250">
 
 </div>
 </center>
@@ -124,7 +124,7 @@ _php **artisan** serve_
 
 <center style="height:250px">
 
-![](./docs/config.jpg   | height=250)
+<img src="./docs/config.jpg " height="250">
 
 </center>
 
