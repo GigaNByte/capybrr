@@ -1,11 +1,11 @@
 
-<div style="width:100px;height:100px;display:flex;justify-content:center;">
+<center  align="center"  >
 
-<div>
+
 <img align="center"  src="./docs/capybara.svg " height="60">
-</div>
 
-</div>
+
+</center>
 
 # Capybrr - Laravel Dating app for Capybaras
 
@@ -24,13 +24,13 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 
 
-<center style="justify-content:center;display:flex;" >
+<center align="center" align="center"  >
 
-<center>
+
 <img src="./docs/capybrr_login.gif" height="450" align="center" >
-</center>
 
 </center>
+
 
 
 
@@ -46,18 +46,18 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 - Deleting previously added pairs of liked users
 
 
-<center style="display:flex;justify-content:center; ">
-<center>
+
+<center  align="center" >
 
 <img src="./docs/capybrr_profile_1.png" height="450" align="center" >
 
-</center>
-<center >
+
+
 
 <img src="./docs/capybrr_profile_2.png" height="450" align="center" >
 
 </center>
-</center>
+
 
 
 
@@ -71,19 +71,16 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 
 
-<center style="display:flex;justify-content:center;">
 
-<center style="height:250px">
+<center  align="center" >
 
 <img src="./docs/admin_panel_1.png" height="450" align="center" >
 
-</center>
-<center style="height:250px">
 
 <img src="./docs/admin_panel_2.png" height="450" align="center" >
 
 </center>
-</center>
+
 
 
 
@@ -134,9 +131,9 @@ _php **artisan** storage:link_
 _php **artisan** serve_
 
 
-<center style="height:250px">
+<center  align="center" >
 
-<img align="center" src="./docs/config.jpg " height="450" align="center" >
+<img align="center" src="./docs/config.jpg "  >
 
 </center>
 
