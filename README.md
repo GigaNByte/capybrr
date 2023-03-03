@@ -1,9 +1,9 @@
 
-<center style="width:100px;height:100px;display:flex;justify-content:center;">
+<div style="width:100px;height:100px;display:flex;justify-content:center;">
 
-![](./docs/capybara.svg)
+![](./docs/capybara.svg | height=60)
 
-</center>
+</div>
 
 # Capybrr - Laravel Dating app for Capybaras
 
@@ -20,7 +20,7 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 <center style="height:250px" >
 
-![](./docs/capybrr_login.gif)
+![](./docs/capybrr_login.gif  | height=250)
 
 </center>
 
@@ -31,18 +31,18 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 ### User:
 
-<center style="display:flex;justify-content:center; ">
+<div style="display:flex;justify-content:center; ">
 <div style="height:250px">
 
-![](./docs/capybrr_profile_1.png)
+![](./docs/capybrr_profile_1.png   | height=250)
 
 </div>
 <div style="height:250px">
 
-![](./docs/capybrr_profile_2.png)
+![](./docs/capybrr_profile_2.png   | height=250)
 
 </div>
-</center>
+</div>
 
 
 - Modification of basic personal data
@@ -59,12 +59,12 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 <div style="height:250px">
 
-![](./docs/admin_panel_1.png)
+![](./docs/admin_panel_1.png   | height=250)
 
 </div>
 <div style="height:250px">
 
-![](./docs/admin_panel_2.png)
+![](./docs/admin_panel_2.png   | height=250)
 
 </div>
 </center>
@@ -124,7 +124,7 @@ _php **artisan** serve_
 
 <center style="height:250px">
 
-![](./docs/config.jpg)
+![](./docs/config.jpg   | height=250)
 
 </center>
 
