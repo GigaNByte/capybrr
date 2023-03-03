@@ -1,7 +1,9 @@
 
 <div style="width:100px;height:100px;display:flex;justify-content:center;">
 
+<div>
 <img src="./docs/capybara.svg " height="60">
+</div>
 
 </div>
 
@@ -17,33 +19,23 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 ### Guest:
 
-
-<center style="height:250px" >
-
-<img src="./docs/capybrr_login.gif" height="250">
-
-</center>
-
-
 - Create a new profile
 - Login
 
 
+
+<center style="justify-content:center;display:flex;" >
+
+<center>
+<img src="./docs/capybrr_login.gif" height="300">
+</center>
+
+</center>
+
+
+
+
 ### User:
-
-<div style="display:flex;justify-content:center; ">
-<div style="height:250px">
-
-<img src="./docs/capybrr_profile_1.png" height="250">
-
-</div>
-<div style="height:250px">
-
-<img src="./docs/capybrr_profile_2.png" height="250">
-
-</div>
-</div>
-
 
 - Modification of basic personal data
 - Modification of login data
@@ -53,27 +45,47 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 - Overview of matchedusers and likedusers
 - Deleting previously added pairs of liked users
 
-### Administrator:
 
-<center style="display:flex;justify-content:center;">
+<center style="display:flex;justify-content:center; ">
+<center>
 
-<div style="height:250px">
+<img src="./docs/capybrr_profile_1.png" height="300">
 
-<img src="./docs/admin_panel_1.png" height="250">
+</center>
+<center >
 
-</div>
-<div style="height:250px">
+<img src="./docs/capybrr_profile_2.png" height="300">
 
-<img src="./docs/admin_panel_2.png" height="250">
-
-</div>
+</center>
 </center>
 
+
+
+
+### Administrator:
 
 - Access to portal statistics
 - Access to all users and deletion
 - Access to all some users and deletion
 - Viewing, adding, editing interests made available to users
+
+
+
+<center style="display:flex;justify-content:center;">
+
+<center style="height:250px">
+
+<img src="./docs/admin_panel_1.png" height="250">
+
+</center>
+<center style="height:250px">
+
+<img src="./docs/admin_panel_2.png" height="250">
+
+</center>
+</center>
+
+
 
 # Installation requirements:
 
