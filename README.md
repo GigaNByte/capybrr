@@ -1,13 +1,11 @@
-<center style="width:100px;height:100px;display:block;">
 
-![](./docs/capybara.png)
+<center style="width:100px;height:100px;display:flex;justify-content:center;">
+
+![](./docs/capybara.svg)
 
 </center>
+
 # Capybrr - Laravel Dating app for Capybaras
-
-<center>
-![](./docs/app.gif)
-</center>
 
 Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their profiles, profile pictures, descriptions and interests. The dating app only allows contact information to be shared between interested couples. The administrator has the ability to supervise, edit and collect statistical information on the portal.
 
@@ -20,8 +18,10 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 ### Guest:
 
 
-<center>
+<center style="height:250px" >
+
 ![](./docs/capybrr_login.gif)
+
 </center>
 
 
@@ -31,12 +31,17 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 ### User:
 
-<center style="display:flex;justify-content:center;">
+<center style="display:flex;justify-content:center; ">
+<div style="height:250px">
 
 ![](./docs/capybrr_profile_1.png)
 
+</div>
+<div style="height:250px">
+
 ![](./docs/capybrr_profile_2.png)
 
+</div>
 </center>
 
 
@@ -52,10 +57,16 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 <center style="display:flex;justify-content:center;">
 
+<div style="height:250px">
+
 ![](./docs/admin_panel_1.png)
+
+</div>
+<div style="height:250px">
 
 ![](./docs/admin_panel_2.png)
 
+</div>
 </center>
 
 
@@ -111,8 +122,10 @@ _php **artisan** storage:link_
 _php **artisan** serve_
 
 
-<center>
+<center style="height:250px">
+
 ![](./docs/config.jpg)
+
 </center>
 
 Configuration parameters, including login details for the administrator account, default login details for generated users, database connection details are in the.env file
