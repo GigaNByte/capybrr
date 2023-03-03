@@ -2,7 +2,7 @@
 <div style="width:100px;height:100px;display:flex;justify-content:center;">
 
 <div>
-<img src="./docs/capybara.svg " height="60">
+<img align="center"  src="./docs/capybara.svg " height="60">
 </div>
 
 </div>
@@ -27,7 +27,7 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 <center style="justify-content:center;display:flex;" >
 
 <center>
-<img src="./docs/capybrr_login.gif" height="300">
+<img src="./docs/capybrr_login.gif" height="450" align="center" >
 </center>
 
 </center>
@@ -49,12 +49,12 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 <center style="display:flex;justify-content:center; ">
 <center>
 
-<img src="./docs/capybrr_profile_1.png" height="300">
+<img src="./docs/capybrr_profile_1.png" height="450" align="center" >
 
 </center>
 <center >
 
-<img src="./docs/capybrr_profile_2.png" height="300">
+<img src="./docs/capybrr_profile_2.png" height="450" align="center" >
 
 </center>
 </center>
@@ -75,12 +75,12 @@ Laravel app Capybrr allows you to meet new capybaras of the opposite sex, their 
 
 <center style="height:250px">
 
-<img src="./docs/admin_panel_1.png" height="250">
+<img src="./docs/admin_panel_1.png" height="450" align="center" >
 
 </center>
 <center style="height:250px">
 
-<img src="./docs/admin_panel_2.png" height="250">
+<img src="./docs/admin_panel_2.png" height="450" align="center" >
 
 </center>
 </center>
@@ -136,7 +136,7 @@ _php **artisan** serve_
 
 <center style="height:250px">
 
-<img src="./docs/config.jpg " height="250">
+<img align="center" src="./docs/config.jpg " height="450" align="center" >
 
 </center>
 
